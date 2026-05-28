@@ -1,4 +1,3 @@
-import simpy
 import networkx as nx
 #extraemos las librerias que usaremos para la simulacion y el calculo de las distancias
 
@@ -62,14 +61,3 @@ class MapaParaguana:
         if self.G.has_edge(origen, destino):
             self.G[origen][destino]["bloqueada"] = "bloquear"
 
-class DeliveryMoto:
-    def __init__(self, env, id_moto, mapa, origen, destino):
-        self.env = env
-        self.id_moto = id_moto
-        self.mapa = mapa
-        self.origen = origen
-        self.destino = destino
-        self.velocidad = 40 # km/h
-
-        #inicio mi clase automaticamente cuando llamo a la clase para la simulacion
-        self.proceso = env.process(self.run())
