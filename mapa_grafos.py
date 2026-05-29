@@ -46,7 +46,6 @@ class MapaParaguana:
 
     def calcular_dijkstra(self, origen, destino):
         #aqui es donde calculamos la ruta mas optima entre los distintos nodos tambien toma en encuenta si la arista esta ocupada
-
         try:
             return nx.shortest_path(
                 self.G,
@@ -59,5 +58,5 @@ class MapaParaguana:
         
     def obstruir_paso(self, origen, destino, bloqueada=True):
         if self.G.has_edge(origen, destino):
-            self.G[origen][destino]["bloqueada"] = "bloquear"
+            self.G[origen][destino]["bloqueada"] = "bloqueada"
 

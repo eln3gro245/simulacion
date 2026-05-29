@@ -2,59 +2,59 @@ import simpy
 import mapa_grafos as mg
 
 class DeliveryMoto:
-    def __init__(self, env, id_moto, mapa, origen, destino):
+    def __init__(self, env, id_moto, mapa, origen):
         self.env = env
         self.id_moto = id_moto
         self.mapa = mapa
-        self.origen = origen
-        self.destino = destino
+        self.nodo_actual = origen
         self.velocidad = 40 # km/h
 
         #inicio mi clase automaticamente cuando llamo a la clase para la simulacion
         self.proceso = env.process(self.run())
+        #creamos una lista que almanace la ruta ya definida
+        self.historial = [origen]
 
-    def run(self):
-            """Bucle principal del comportamiento del camión (Proceso SimPy)"""
-            print(f"[{self.env.now:.2f} min] 🚛 Camión {self.id} encendido en {self.nodo_actual}.")
-            
-            # Calcular ruta inicial
-            ruta = self.mapa.calcular_ruta(self.nodo_actual, self.destino_final)
-            
-            while self.nodo_actual != self.destino_final:
-                siguiente_nodo = ruta[ruta.index(self.nodo_actual) + 1]
-                
-                # Verificar si el tramo que viene está libre
-                if self.mapa.G[self.nodo_actual][siguiente_nodo]['bloqueada']:
-                    print(f"[{self.env.now:.2f} min] ⚠️ Camión {self.id} ve tramo trancado. Recalculando...")
-                    ruta = self.mapa.calcular_ruta(self.nodo_actual, self.destino_final)
-                    if not ruta:
-                        print(f"[{self.env.now:.2f} min] ❌ Camión {self.id} varado. No hay desvíos disponibles.")
-                        return
-                    siguiente_nodo = ruta[1] # Tomar el primer paso de la nueva ruta
-                
-                # Viajar
-                distancia = self.mapa.G[self.nodo_actual][siguiente_nodo]['distancia']
-                tiempo_viaje = (distancia / self.velocidad) * 60
-                
-                yield self.env.timeout(tiempo_viaje)
-                self.nodo_actual = siguiente_nodo
-                print(f"[{self.env.now:.2f} min] 📍 Camión {self.id} llegó a {self.nodo_actual}")
-                
-            print(f"[{self.env.now:.2f} min] 🎉 Camión {self.id} completó entrega en {self.destino_final}.")
+    def run(self, destino):
+        #aqui es donde vamos a correr la simulación
+        print(f"Tiempo Transcurrido: {self.env.now:.2f} Minutos \n La Moto {self.id_moto} en Direccion desde {self.nodo_actual.title()} hasta {destino.title()}")
 
+        #hacemos el calculo de la ruta mediante dijkstra
+        ruta = self.mapa.calcular_dijkstra(self.nodo_actual, destino)
+
+        #esta es la logica para que define el movimiento de la moto entre los nodos 
+        while self.nodo_actual != destino:
+            siguiente_nodo = ruta[ruta.index(self.nodo_actual) + 1]
+
+            #en esta parte verificamos si el camino(o ruta) esta despejada
+            if self.mapa.G[self.nodo_actual][siguiente_nodo]['bloqueada']:
+                print(f"Tiempo Transcurrido: {self.env.now:.2f} Minutos \n La Moto {self.id_moto} se encontro una calle bloqueada \n recalculando...")
+                #se llama ruta alternativa para que podemas determinar los posibles camino si esta atascado
+                ruta_alternativa = self.mapa.calcular_dijkstra(self.nodo_actual, destino)
+
+                if not ruta_alternativa:
+                    #vemos nuestro historial para lograr devolvernos si no hay camino
+                    if len(self.historial) > 1:
+                        #ahora medieante le historial nos devolvemos
+                        nodo_anterior = self.historial[-2]
+
+                        print(f"Tiempo Transcurrido: {self.env.now:.2f} Minutos \n La Moto {self.id_moto} volviendo a {nodo_anterior} para recalcular \n volviendo...")
+
+                        #forzamos el cambio de nodo
+                        ruta = self.mapa.calcular_dijkstra(self.nodo_actual, nodo_anterior)
+                
+                else:
+                    ruta = ruta_alternativa
+                    siguiente_nodo = ruta[1]
+        
+            #aqui estan los datos que genero la simulacion
+            distancia = self.mapa.G[self.nodo_actual][siguiente_nodo]['distancia']
+            tiempo_del_viaje = (distancia / self.velocidad) * 60
+
+            yield self.env.timeout(tiempo_del_viaje)
+
+
+                    
 
 # Entorno de ejecución
 if __name__ == "__main__":
-    env = simpy.Environment()
-    mapa = mg.MapaParaguana()
-    
-    # Instanciamos camiones como objetos autónomos
-    camion1 = DeliveryMoto(env, "FarmaNorte-01", mapa, "Las_Margaritas", "Hospital_Calle_Sierra")
-
-    ruta = mg.MapaParaguana.calcular_dijkstra(camion1)
-    
-    # Podemos meter un evento rápido usando una función generadora simple de SimPy
-    evento_accidente = mg.MapaParaguana.obstruir_paso("Las_Margaritas", "Hospital_Calle_Sierra")
-        
-    env.process(evento_accidente)
-    env.run(until=30)
+    pass
