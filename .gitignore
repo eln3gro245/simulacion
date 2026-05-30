@@ -1,1 +1,22 @@
 env
+__pycache__
+
+# 1. Carpetas de metadatos locales y caché del motor (CRUCIAL)
+godot/.godot/
+godot/.import/
+
+# 2. Configuración específica de exportación (guarda contraseñas o rutas locales)
+export_presets.cfg
+
+# 3. Archivos de identificación única del editor
+*.uid
+
+# 4. Archivos temporales de colisiones o respaldos del sistema
+*.tmp
+*.log
+.mono/
+mono_crash_release_*.json
+
+# 5. Archivos del Sistema Operativo que ensucian el repo
+Thumbs.db
+.DS_Store

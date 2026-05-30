@@ -1,5 +1,6 @@
 import simpy
 import networkx as nx
+from pyvis.network import Network
 #extraemos las librerias que usaremos para la simulacion y el calculo de las distancias
 
 class MapaParaguana:
@@ -7,8 +8,8 @@ class MapaParaguana:
         self.G = nx.Graph()
         #con este metodo creamos la funcion para crear los nodos de punto fijo
         self.construir_Punto_Fijo()
-        self.constriuir_Distribuidor_El_Sabino()
-
+        self.construir_Punto_Fijo()
+        
     def construir_Punto_Fijo(self):
         #aqui vamos a construir punto fijo de manera que todo sea mas simple de ver, a manera de nodo
         #estos son los nodos que representa a punto fijo
