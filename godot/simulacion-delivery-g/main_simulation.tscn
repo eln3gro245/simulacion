@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://cfwkdv51uddfq"]
+
+[ext_resource type="Texture2D" uid="uid://cpo1h8ehac1ld" path="res://Mapa v2.png" id="1_48u2w"]
+
+[node name="Main_Simulation" type="Control" unique_id=1610140213]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Mapa_Fondo" type="TextureRect" parent="." unique_id=1700057164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_48u2w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Entidades_Simulacion" type="Node2D" parent="." unique_id=1251033558]
+
+[node name="Rutas_Lineas" type="Node2D" parent="Entidades_Simulacion" unique_id=320002121]
+
+[node name="Centro_Las_Margaritas" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=796153587]
+points = PackedVector2Array(448, 122, 451, 175, 449, 197, 563, 187, 602, 150, 679, 197, 649, 267)
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+joint_mode = 2
+
+[node name="Centro_Maraven" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=965162411]
+points = PackedVector2Array(445, 123, 407, 125, 411, 181, 406, 221, 443, 216, 443, 304, 463, 313, 528, 318, 527, 336, 506, 350, 467, 371, 398, 412, 417, 450, 363, 481, 363, 505)
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+joint_mode = 2
+
+[node name="Centro_Punta_Cardon" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1685732286]
+points = PackedVector2Array(447, 121, 451, 177, 444, 216, 444, 304, 465, 312, 596, 323, 610, 341, 606, 351, 570, 371, 488, 552, 470, 542)
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+joint_mode = 2
+
+[node name="Maraven_La_Puerta" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1736668451]
+points = PackedVector2Array(359, 503, 409, 513, 411, 522, 434, 508, 454, 539, 488, 554, 510, 566, 557, 470, 618, 498, 620, 494)
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+joint_mode = 2
+
+[node name="Maraven_Punta_Cardon" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1334684901]
+points = PackedVector2Array(361, 505, 362, 531, 385, 535, 399, 553, 420, 540, 429, 556, 454, 540, 472, 544)
+width = 3.0
+default_color = Color(0, 1, 1, 1)
+joint_mode = 2
+
+[node name="La_Puerta" type="Marker2D" parent="Entidades_Simulacion" unique_id=1989032310]
+position = Vector2(620, 494)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/La_Puerta" unique_id=1189094433]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "La Puerta"
+
+[node name="Centro" type="Marker2D" parent="Entidades_Simulacion" unique_id=1660141255]
+position = Vector2(448, 123)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/Centro" unique_id=1202383958]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Centro"
+
+[node name="Maraven" type="Marker2D" parent="Entidades_Simulacion" unique_id=1416710948]
+position = Vector2(360, 505)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/Maraven" unique_id=39229487]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Maraven"
+
+[node name="Punta_Cardon" type="Marker2D" parent="Entidades_Simulacion" unique_id=1507144886]
+position = Vector2(472, 544)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/Punta_Cardon" unique_id=1477543635]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Punta Cardon"
+
+[node name="Las_Margaritas" type="Marker2D" parent="Entidades_Simulacion" unique_id=1615551659]
+position = Vector2(654, 269)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/Las_Margaritas" unique_id=662763833]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Las Margaritas"
+
+[node name="El Sabino" type="Marker2D" parent="Entidades_Simulacion" unique_id=1866253682]
+position = Vector2(471, 380)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/El Sabino" unique_id=2086520518]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "El Sabino"
+
+[node name="UNEFA" type="Marker2D" parent="Entidades_Simulacion" unique_id=1323057608]
+position = Vector2(346, 489)
+
+[node name="Label" type="Label" parent="Entidades_Simulacion/UNEFA" unique_id=1682031544]
+offset_left = -63.0
+offset_top = -22.0
+offset_right = -10.0
+offset_bottom = 1.0
+text = "UNEFA"
+
+[node name="Zona_Franca" type="Marker2D" parent="Entidades_Simulacion" unique_id=868999240]
+position = Vector2(494, 301)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/Zona_Franca" unique_id=697069190]
+offset_left = 5.0
+offset_top = -24.0
+offset_right = 100.0
+offset_bottom = -1.0
+text = "Zona Franca"
+
+[node name="Comunidad_Cardon" type="Marker2D" parent="Entidades_Simulacion" unique_id=1672623702]
+position = Vector2(324, 540)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/Comunidad_Cardon" unique_id=855208159]
+offset_left = -170.0
+offset_top = -17.0
+offset_right = -20.0
+offset_bottom = 6.0
+text = "Comunidad Cardon"
+
+[node name="Hospital_Calle_Sierra" type="Marker2D" parent="Entidades_Simulacion" unique_id=2128189027]
+position = Vector2(783, 104)
+
+[node name="Texto" type="Label" parent="Entidades_Simulacion/Hospital_Calle_Sierra" unique_id=1581917283]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hospital Calle Sierra"
+
+[node name="Interfaz_Usuario" type="CanvasLayer" parent="." unique_id=1786327857]
