@@ -1,4 +1,3 @@
-import simpy
 import networkx as nx
 from pyvis.network import Network
 #extraemos las librerias que usaremos para la simulacion y el calculo de las distancias
@@ -48,7 +47,6 @@ class MapaParaguana:
 
     def calcular_dijkstra(self, origen, destino):
         #aqui es donde calculamos la ruta mas optima entre los distintos nodos tambien toma en encuenta si la arista esta ocupada
-
         try:
             return nx.shortest_path(
                 self.G,
@@ -61,16 +59,5 @@ class MapaParaguana:
         
     def obstruir_paso(self, origen, destino, bloqueada=True):
         if self.G.has_edge(origen, destino):
-            self.G[origen][destino]["bloqueada"] = "bloquear"
+            self.G[origen][destino]["bloqueada"] = "bloqueada"
 
-class DeliveryMoto:
-    def __init__(self, env, id_moto, mapa, origen, destino):
-        self.env = env
-        self.id_moto = id_moto
-        self.mapa = mapa
-        self.origen = origen
-        self.destino = destino
-        self.velocidad = 40 # km/h
-
-        #inicio mi clase automaticamente cuando llamo a la clase para la simulacion
-        self.proceso = env.process(self.run())
