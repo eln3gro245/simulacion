@@ -1,0 +1,329 @@
+[gd_scene format=3 uid="uid://d10g4eo0w31ep"]
+
+[ext_resource type="Texture2D" uid="uid://dstvydkebvx75" path="res://assets/moto_logo_v.png" id="2_6loih"]
+[ext_resource type="Theme" uid="uid://bbj2xgwuml55l" path="res://resources/element_themes.tres" id="2_u50k8"]
+[ext_resource type="Texture2D" uid="uid://dcm7d5d6tudmn" path="res://assets/Time_logo.png" id="4_ke4fu"]
+[ext_resource type="Texture2D" uid="uid://dcijc8xpognuc" path="res://assets/location_logo.png" id="5_0g75o"]
+[ext_resource type="FontFile" uid="uid://bp127wq36h0wg" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="5_63phn"]
+[ext_resource type="Texture2D" uid="uid://dteqgrorvl7jn" path="res://assets/Menu_hamburguesa.png" id="6_63phn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke4fu"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.019607844, 0.09411765, 0.15294118, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.7490196, 1, 0.1882353)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0, 0.78431374, 1, 0.08235294)
+shadow_size = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_ke4fu"]
+color = Color(0, 0.78431374, 1, 0.78431374)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0g75o"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.015686275, 0.06666667, 0.11372549, 0.8627451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.7490196, 1, 0.1882353)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33t3g"]
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.050980393, 0.65882355, 0.7529412, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Node2D" type="Node2D" unique_id=1659710242]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871999709]
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=1812545691]
+offset_left = 30.0
+offset_top = 59.0
+offset_right = 243.0
+offset_bottom = 222.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=898123559]
+custom_minimum_size = Vector2(350, 600)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_u50k8")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ke4fu")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=1520969037]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer" unique_id=1141916775]
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=269493040]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="moto_logist" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1438513262]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("2_6loih")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Logist_Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1958311374]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 26
+text = "LOGISTICA PARAGUANA
+"
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=360111139]
+layout_mode = 2
+theme_override_constants/separation = 15
+theme_override_styles/separator = SubResource("StyleBoxLine_ke4fu")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=614930600]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=834342099]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("4_ke4fu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=2028674074]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 16
+text = "Estado: Esperando..."
+vertical_alignment = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1214527638]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1627828974]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+texture = ExtResource("5_0g75o")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer3" unique_id=1533604408]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 16
+text = "Parada actual: --"
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1582651059]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0g75o")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer" unique_id=1473710594]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer" unique_id=946276975]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer" unique_id=2097271440]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Fila_lista" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1713988571]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_lista" unique_id=1766340339]
+layout_mode = 2
+texture = ExtResource("6_63phn")
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_lista" unique_id=18304740]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 3
+theme_override_font_sizes/font_size = 14
+text = "LISTA DE PARADAS"
+
+[node name="Fila_Parada1" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1253251875]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada1" unique_id=412187004]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="Zona_FrancaLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada1" unique_id=942931099]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = " Zona Franca"
+
+[node name="Fila_Parada2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=729057850]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada2" unique_id=3303360]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="Hosp_Calle_SierraLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada2" unique_id=1070038077]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "Hosp. Calle Sierra"
+
+[node name="Fila_Parada3" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=646025782]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada3" unique_id=895768496]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="Punta_CardonLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada3" unique_id=78458943]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "Punta Cardon"
+
+[node name="Fila_Parada4" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=604149629]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada4" unique_id=1796259370]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="CentroLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada4" unique_id=534481201]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "Centro"
+
+[node name="Fila_Parada5" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1406539963]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada5" unique_id=2116130341]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="Las_MargaritasLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada5" unique_id=1920497402]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "Las Margaritas"
+
+[node name="Fila_Parada6" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=353265855]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada6" unique_id=831595240]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="El_SabinoLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada6" unique_id=414951645]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "El Sabino"
+
+[node name="Fila_Parada7" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1775684207]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada7" unique_id=1764855853]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="UNEFA_Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada7" unique_id=847327903]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "UNEFA"
+
+[node name="Fila_Parada8" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=351427203]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada8" unique_id=675734685]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="MaravenLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada8" unique_id=1870367559]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "Maraven"
+
+[node name="Fila_Parada9" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=490405884]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada9" unique_id=34386656]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="Comunidad_CardonLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada9" unique_id=1988140996]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "Comunidad Cardon"
+
+[node name="Fila_Parada10" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=107955877]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada10" unique_id=1770890824]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
+text = "•"
+
+[node name="La_PuertaLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada10" unique_id=886490270]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+theme_override_font_sizes/font_size = 14
+text = "La Puerta"
+
+[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1846433085]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0.7176471, 0.81960785, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_33t3g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_33t3g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_33t3g")
+text = "▶ INICIAR RECORRIDO
+"

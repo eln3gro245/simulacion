@@ -1,0 +1,23 @@
+[gd_resource type="Theme" format=3 uid="uid://bbj2xgwuml55l"]
+
+[ext_resource type="FontFile" uid="uid://2eyplm6d646i" path="res://assets/fonts/Inter_24pt-Bold.ttf" id="1_cf6yx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cf6yx"]
+content_margin_left = 25.0
+content_margin_top = 25.0
+content_margin_right = 25.0
+content_margin_bottom = 25.0
+bg_color = Color(0.015686275, 0.06666667, 0.11372549, 0.8627451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[resource]
+Label/font_sizes/font_size = 20
+Label/fonts/font = ExtResource("1_cf6yx")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_cf6yx")
