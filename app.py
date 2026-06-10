@@ -5,18 +5,19 @@ import json
 import mapa_grafos as mg
 
 class DeliveryMoto:
-    def __init__(self, env, id_moto, mapa):
+    def __init__(self, env, id_moto, mapa, destino):
         self.env = env
         self.id_moto = id_moto
         self.mapa = mapa
         self.nodo_actual = "centro"
         self.velocidad = 40 # km/h
+        self.destino = destino
 
         #aqui asignamos una atributo para mandar la ruta calcula mendiate dijkstra para que se muestre en el godot
         self.ruta_dijkstra = []
 
         #inicio mi clase automaticamente cuando llamo a la clase para la simulacion
-        self.proceso = env.process(self.run())
+        self.proceso = env.process(self.run(self.destino))
         #creamos una lista que almanace la ruta ya definida
         self.historial = [self.nodo_actual]
 
@@ -90,7 +91,7 @@ async def manejo_server_godot(websocket, mapa):
                 id_moto = moto["Id_Moto"]
                 destino = moto["Destino"]
 
-                moto = DeliveryMoto(env_simpy, id_moto, mapa)
+                moto = DeliveryMoto(env_simpy, id_moto, mapa, destino)
 
                 #luego aqui con los datos moto proporcionados por el godot ejecutamos la logica del grafo
                 moto.run(destino)
