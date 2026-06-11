@@ -12,11 +12,11 @@ class MapaParaguana:
     def construir_Punto_Fijo(self):
         #aqui vamos a construir punto fijo de manera que todo sea mas simple de ver, a manera de nodo
         #estos son los nodos que representa a punto fijo
-        self.G.add_node("Centro", pos=(2, 8))
-        self.G.add_node("Las_Margaritas", pos=(4, 9))
-        self.G.add_node("Maraven", pos=(3, 3))
-        self.G.add_node("La_Puerta", pos=(5, 1))
-        self.G.add_node("Punta_Cardon", pos=(1, 1))
+        self.G.add_node("Centro", pos=(624, 188))
+        self.G.add_node("Las_Margaritas", pos=(904, 417))
+        self.G.add_node("Maraven", pos=(520, 703))
+        self.G.add_node("La_Puerta", pos=(864, 687))
+        self.G.add_node("Punta_Cardon", pos=(698, 746))
 
         #estas son las conexiones entre cada nodo (aristas) la distacia esta en kilometros
         self.G.add_edge("Centro", "Las_Margaritas", distancia=5.0, bloqueada=False)
@@ -28,11 +28,11 @@ class MapaParaguana:
 
     def constriuir_Distribuidor_El_Sabino(self):
         #hacemos el mismo procedimiento antes para el Sabino
-        self.G.add_node("Distribuidor_El_Sabino", pos=(6, 8))
-        self.G.add_node("UNEFA", pos=(7, 7))
-        self.G.add_node("Zona_Franca", pos=(8, 6))
-        self.G.add_node("Comunidad_Cardon", pos=(5, 5))
-        self.G.add_node("Hospital_Calle_Sierra", pos=(2, 10))
+        self.G.add_node("Distribuidor_El_Sabino", pos=(648, 516))
+        self.G.add_node("UNEFA", pos=(487, 686))
+        self.G.add_node("Zona_Franca", pos=(641, 407))
+        self.G.add_node("Comunidad_Cardon", pos=(426, 784))
+        self.G.add_node("Hospital_Calle_Sierra", pos=(1081, 127))
 
         #igual antes estas son las conexiones (airstas) para el Sabino
         self.G.add_edge("Distribuidor_El_Sabino", "UNEFA", distancia=1.5, bloqueada=False)

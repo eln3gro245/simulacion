@@ -15,6 +15,10 @@ run/main_scene="uid://cfwkdv51uddfq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+ConexionPython="*uid://b3seo31ro76q1"
+
 [display]
 
 window/size/viewport_width=1600
@@ -24,9 +28,6 @@ window/stretch/mode="canvas_items"
 [gui]
 
 theme/custom="uid://bbj2xgwuml55l"
-[autoload]
-
-ConexionPython="*uid://b3seo31ro76q1"
 
 [physics]
 
