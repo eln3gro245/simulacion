@@ -186,6 +186,7 @@ text = "Hosp. Calle Sierra"
 [node name="Interfaz_Usuario" type="CanvasLayer" parent="." unique_id=1786327857]
 
 [node name="Node2D" parent="Interfaz_Usuario" unique_id=1659710242 instance=ExtResource("4_bortu")]
+position = Vector2(-5, 0)
 
 [node name="ContenedorMoto" type="Control" parent="." unique_id=302289098]
 anchors_preset = 0
