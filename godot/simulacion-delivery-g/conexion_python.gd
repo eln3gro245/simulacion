@@ -24,8 +24,6 @@ func _process(_delta) -> void:
 		if not conectado:
 			#una vez hechas la verificaciones estamos conectados con python
 			conectado = true
-			#mandamos a arrancar la moto dentro de python
-			enviar_arranque_moto()
 			
 			#tambien nos aseguramos que estamos recibiendo informacion desde python
 			while socket.get_available_packet_count() > 0:
@@ -39,13 +37,13 @@ func _process(_delta) -> void:
 			conectado = false
 			
 #enviamos el comando para ir encendiendo la moto
-func enviar_arranque_moto() -> void:
+func enviar_arranque_moto(destino: String) -> void:
 	#la peticion deberia ser exactamente como python lo esta esperando
 	var peticion = {
 		"Comando": "Arrancar_Moto",
 		"Moto": {
 			"Id_Moto": "moto_01",
-			"Destino": "Maraven"
+			"Destino": destino
 		}
 	}
 	
