@@ -194,4 +194,4 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Moto" parent="ContenedorMoto" unique_id=1323727844 instance=ExtResource("2_41m6i")]
-position = Vector2(73, 1)
+position = Vector2(125, -238)
