@@ -44,6 +44,66 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63phn"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awyb4"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnjed"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4una"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o6mv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rnwo2"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqvxc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egwi4"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5eju"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqrow"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yo6hs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jolw"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4qpr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkes4"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3wp6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sjue"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rxoeu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xt50m"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xf00c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60mnb"]
+bg_color = Color(0, 0.8509804, 1, 0.13333334)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33t3g"]
 content_margin_top = 10.0
 content_margin_bottom = 10.0
@@ -183,10 +243,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="Zona_FrancaLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada1" unique_id=942931099]
+[node name="Zona_FrancaLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada1" unique_id=1923986209]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_63phn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_awyb4")
 text = " Zona Franca"
 
 [node name="Fila_Parada2" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=729057850]
@@ -197,10 +259,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="Hosp_Calle_SierraLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada2" unique_id=1070038077]
+[node name="Hosp_Calle_SierraLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada2" unique_id=316207987]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_dnjed")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c4una")
 text = "Hosp. Calle Sierra"
 
 [node name="Fila_Parada3" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=646025782]
@@ -211,10 +275,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="Punta_CardonLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada3" unique_id=78458943]
+[node name="Punta_CardonLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada3" unique_id=921584583]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_4o6mv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rnwo2")
 text = "Punta Cardon"
 
 [node name="Fila_Parada4" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=604149629]
@@ -225,10 +291,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="CentroLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada4" unique_id=534481201]
+[node name="CentroLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada4" unique_id=1686833889]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_aqvxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_egwi4")
 text = "Centro"
 
 [node name="Fila_Parada5" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1406539963]
@@ -239,10 +307,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="Las_MargaritasLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada5" unique_id=1920497402]
+[node name="Las_MargaritasLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada5" unique_id=2033288157]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_y5eju")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wqrow")
 text = "Las Margaritas"
 
 [node name="Fila_Parada6" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=353265855]
@@ -253,10 +323,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="El_SabinoLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada6" unique_id=414951645]
+[node name="El_SabinoLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada6" unique_id=1950210813]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_yo6hs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2jolw")
 text = "El Sabino"
 
 [node name="Fila_Parada7" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=1775684207]
@@ -267,10 +339,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="UNEFA_Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada7" unique_id=847327903]
+[node name="UNEFA_Label" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada7" unique_id=866647531]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_k4qpr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xkes4")
 text = "UNEFA"
 
 [node name="Fila_Parada8" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=351427203]
@@ -281,10 +355,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="MaravenLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada8" unique_id=1870367559]
+[node name="MaravenLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada8" unique_id=1789042757]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_c3wp6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0sjue")
 text = "Maraven"
 
 [node name="Fila_Parada9" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=490405884]
@@ -295,10 +371,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="Comunidad_CardonLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada9" unique_id=1988140996]
+[node name="Comunidad_CardonLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada9" unique_id=667539520]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_rxoeu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xt50m")
 text = "Comunidad Cardon"
 
 [node name="Fila_Parada10" type="HBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer" unique_id=107955877]
@@ -309,10 +387,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.7176471, 0.81960785, 1)
 text = "•"
 
-[node name="La_PuertaLabel" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada10" unique_id=886490270]
+[node name="La_PuertaLabel" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada10" unique_id=1952923815]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_xf00c")
+theme_override_styles/hover = SubResource("StyleBoxFlat_60mnb")
 text = "La Puerta"
 
 [node name="Button" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1846433085]
