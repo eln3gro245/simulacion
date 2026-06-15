@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 ConexionPython="*uid://b3seo31ro76q1"
 
+[debug]
+
+settings/stdout/verbose_stdout=true
+
 [display]
 
 window/size/viewport_width=1600
@@ -36,3 +40,5 @@ theme/custom="uid://bbj2xgwuml55l"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"

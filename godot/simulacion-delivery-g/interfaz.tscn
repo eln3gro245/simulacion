@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d10g4eo0w31ep"]
 
+[ext_resource type="Script" uid="uid://cypupfjogeaoo" path="res://controlador_interfaz.gd" id="1_0g75o"]
 [ext_resource type="Texture2D" uid="uid://dstvydkebvx75" path="res://assets/moto_logo_v.png" id="2_6loih"]
 [ext_resource type="Theme" uid="uid://bbj2xgwuml55l" path="res://resources/element_themes.tres" id="2_u50k8"]
 [ext_resource type="Texture2D" uid="uid://dcm7d5d6tudmn" path="res://assets/Time_logo.png" id="4_ke4fu"]
@@ -114,6 +115,7 @@ corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
 [node name="Node2D" type="Node2D" unique_id=1659710242]
+script = ExtResource("1_0g75o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1871999709]
 
@@ -407,3 +409,15 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_33t3g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_33t3g")
 text = "▶ INICIAR RECORRIDO
 "
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada1/Zona_FrancaLabel" to="." method="_on_zona_franca_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada2/Hosp_Calle_SierraLabel" to="." method="_on_hosp_calle_sierra_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada3/Punta_CardonLabel" to="." method="_on_punta_cardon_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada4/CentroLabel" to="." method="_on_centro_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada5/Las_MargaritasLabel" to="." method="_on_las_margaritas_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada6/El_SabinoLabel" to="." method="_on_el_sabino_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada7/UNEFA_Label" to="." method="_on_unefa_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada8/MaravenLabel" to="." method="_on_maraven_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada9/Comunidad_CardonLabel" to="." method="_on_comunidad_cardon_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada10/La_PuertaLabel" to="." method="_on_la_puerta_label_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

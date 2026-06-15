@@ -1,86 +1,62 @@
+from functools import partial
+import mapa_grafos as mg
 import websockets
 import asyncio
 import simpy
 import json
-import mapa_grafos as mg
 
 class DeliveryMoto:
     def __init__(self, env, id_moto, mapa, destino):
         self.env = env
         self.id_moto = id_moto
         self.mapa = mapa
-        self.nodo_actual = "centro"
+        self.nodo_actual = "Centro"
         self.velocidad = 40 # km/h
         self.destino = destino
 
         #aqui asignamos una atributo para mandar la ruta calcula mendiate dijkstra para que se muestre en el godot
         self.ruta_dijkstra = []
-
-        #inicio mi clase automaticamente cuando llamo a la clase para la simulacion
-        self.proceso = env.process(self.run(self.destino))
-        #creamos una lista que almanace la ruta ya definida
+        #ahora guardamos las rutas para hacer calculos de acuerdo a las obstruciones
         self.historial = [self.nodo_actual]
 
-    def run(self, destino):
-        #aqui es donde vamos a correr la simulación
-        print(f"Tiempo Transcurrido: {self.env.now:.2f} Minutos \n La Moto {self.id_moto} en Direccion desde {self.nodo_actual.title()} hasta {destino.title()}")
 
+    def ruta_optima(self):
         #hacemos el calculo de la ruta mediante dijkstra
-        self.ruta_dijkstra = self.mapa.calcular_dijkstra(self.nodo_actual, destino)
+        self.ruta_dijkstra = self.mapa.calcular_dijkstra(self.nodo_actual, self.destino)
 
-        #esta es la logica para que define el movimiento de la moto entre los nodos 
-        while self.nodo_actual != destino:
-            siguiente_nodo = self.ruta_dijkstra[self.ruta_dijkstra.index(self.nodo_actual) + 1]
+    async def nodo_parada(self, websocket, nodo_alcanzado):
+        #aqui es donde estamos ahora
+        self.historial.append(self.nodo_actual)
+        #y aqui es a donde iremos despues
+        self.nodo_actual = nodo_alcanzado
 
-            #en esta parte verificamos si el camino(o ruta) esta despejada
-            if self.mapa.G[self.nodo_actual][siguiente_nodo]['bloqueada']:
-                print(f"Tiempo Transcurrido: {self.env.now:.2f} Minutos \n La Moto {self.id_moto} se encontro una calle bloqueada \n recalculando...")
-                #se llama ruta alternativa para que podemas determinar los posibles camino si esta atascado
-                ruta_alternativa = self.mapa.calcular_dijkstra(self.nodo_actual, destino)
-
-                if not ruta_alternativa:
-                    #vemos nuestro historial para lograr devolvernos si no hay camino
-                    if len(self.historial) > 1:
-                        #ahora medieante le historial nos devolvemos
-                        nodo_anterior = self.historial[-2]
-
-                        print(f"Tiempo Transcurrido: {self.env.now:.2f} Minutos \n La Moto {self.id_moto} volviendo a {nodo_anterior} para recalcular \n volviendo...")
-
-                        #forzamos el cambio de nodo
-                        self.ruta_dijkstra = self.mapa.calcular_dijkstra(self.nodo_actual, nodo_anterior)
-                
-                else:
-                    self.ruta_dijkstra = ruta_alternativa
-                    siguiente_nodo = self.ruta_dijkstra[1]
+        if self.nodo_actual == self.destino:
+            print("destino alcazado")
+            await websocket.send(json.dumps({"Evento": "Entrega_Completada"}))
+            return
         
-            #aqui estan los datos que genero la simulacion
-            distancia = self.mapa.G[self.nodo_actual][siguiente_nodo]['distancia']
-            tiempo_del_viaje = (distancia / self.velocidad) * 60
+        indice_actual = self.ruta_dijkstra.index(self.nodo_actual)
+        siguiente_nodo = self.ruta_dijkstra[indice_actual + 1]
 
-            yield self.env.timeout(tiempo_del_viaje)
+        if self.mapa.G[self.nodo_actual][siguiente_nodo]['bloqueada']:
+            print("recalculando")
 
-    async def enviar_ruta(self, websocket, pedido=False):
-        #aqui mandamos la ruta ya calculada por dikjstra para que se puede visualzar en el godot
-        if pedido == True:
-            mensaje_ruta = {
-            "Evento": "Moto_ruta",
-            "Ruta": self.ruta_dijkstra
-            }
+            self.ruta_dijkstra = self.mapa.calcular_dijkstra(self.nodo_actual, self.destino)
 
-            await websocket.send(json.dumps(mensaje_ruta))
+            await self.enviar_ruta(websocket, pedido=True)
+            print("nueva ruta asignada")
+        
         else:
-            #damos un mensaje de alerta para ser visualizado en godot 
-            mensaje_alerta = {"Alerta": "Error", "Mensaje": "Inserte una Ruta para Visualizar la Ruta"}
-            await websocket.send(json.dumps(mensaje_alerta))
+            await websocket.send(json.dumps({"Evento": "Moto_en_Camido"}))
             
-        
-            
-
 #esta funcion es la que se encagara de la conexion entre el python y el godot
 async def manejo_server_godot(websocket, mapa):
+    print("nos llamo la funcion anterior")
+    moto = None
     try:
         #aqui esperamos la primera peticion para activar la simulacion
         async for mensaje in websocket:
+            print("llego un mensaje", flush=True)
             peticion = json.loads(mensaje)
 
             env_simpy = simpy.Environment()
@@ -91,10 +67,15 @@ async def manejo_server_godot(websocket, mapa):
                 id_moto = moto["Id_Moto"]
                 destino = moto["Destino"]
 
+                print(f"📥 [PYTHON] Comando Recibido. Moto ID: {id_moto} | Destino: {destino}")
+                
+
                 moto = DeliveryMoto(env_simpy, id_moto, mapa, destino)
 
                 #luego aqui con los datos moto proporcionados por el godot ejecutamos la logica del grafo
-                moto.run(destino)
+                moto.ruta_optima()
+
+                print(f"🗺️ [PYTHON] Ruta calculada por Dijkstra: {moto.ruta_dijkstra}")
 
                 #ahora dentro de python realizamos nosotros la peticion desde python
                 mensaje_json = {
@@ -102,16 +83,19 @@ async def manejo_server_godot(websocket, mapa):
                     "Datos": {
                         "Estado": "Procesando_Ruta",
                         "Origen": moto.nodo_actual,
-                        "Destino": destino
+                        "Destino": destino,
+                        "Ruta": moto.ruta_dijkstra
                     }
                 }
 
-                await websocket.send(json.dumps(mensaje_json))
+            elif peticion.get("Comando") == "Llegue_Nodo":
+                nodo_alcanzado = peticion["Nodo"]
 
-                pedido = True
-
-                #aqui enviamos la ruta calcula por dijkstra
-                await moto.enviar_ruta(websocket, pedido)
+                #verificamos si la moto existe
+                if moto is not None:
+                    await moto.nodo_parada(websocket, nodo_alcanzado)
+                else:
+                    print("falta la moto")
 
             elif peticion.get("Comando") == "Obtruir_Paso":
                 ruta = peticion["Ruta"]
@@ -134,18 +118,38 @@ async def manejo_server_godot(websocket, mapa):
     except websockets.exceptions.ConnectionClosedOK:
         print("conexion terminada")
 
+    except websockets.exceptions.ConnectionClosedError:
+        print("la conexion fue cerrada de golpe")
+        
+    except json.JSONDecodeError:
+        print("❌ [PYTHON ERROR] ¡Llegó un paquete corrupto o no es un JSON válido!")
+        
+    except Exception as e:
+        print(f"💥 [PYTHON ERROR] Ocurrió un error inesperado en el bucle: {e}")
+        
+    finally:
+        print("🧹 [PYTHON] Limpiando recursos de la conexión. Servidor listo para el siguiente intento.")
+
 async def conexion_server():
+    print("levantando servidor")
     #aqui vamos a hacer uso de todas la funciones para y mantener la conexion con el godot
     mapa = mg.MapaParaguana() #este es el mapa que esta hecho con grafos para dar sentido a las cosas dentro del godot
 
+    #creamos una funcion clon para menejar de manera asicrona la conexion con godot
+    funcion_clon = partial(manejo_server_godot, mapa=mapa)
+
+    print("clon creado esperando el wedsocket")
+
     #activo el servidor y lo dejo escuchando peticiones del godot
     async with websockets.serve(
-        lambda ws: manejo_server_godot(ws, mapa),
-        "localhost",
+        funcion_clon,
+        "127.0.0.1",
         8765
     ):
     
         await asyncio.Future() #esto mantiene activo el puerto para recibir y enviar peticiones
+    
+    print("serividor activo")
 
 
 # Entorno de ejecución
