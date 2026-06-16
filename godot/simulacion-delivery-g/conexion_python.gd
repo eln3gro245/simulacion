@@ -72,6 +72,14 @@ func _manejar_datos(text: String) -> void:
 			nombre_evento = respuesta.get("Evento")
 			ruta_python.emit(nombre_evento, respuesta)
 		
+		elif respuesta.get("Evento") == "No_Obstruccion":
+			nombre_evento = respuesta.get("Evento")
+			ruta_python.emit(nombre_evento, respuesta)
+		
+		elif respuesta.get("Evento") == "Entrega_Completada":
+			nombre_evento = respuesta.get("Evento")
+			ruta_python.emit(nombre_evento, respuesta)
+		
 	else:
 		print("error al pasar los datos del python")
 		

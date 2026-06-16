@@ -40,8 +40,9 @@ func _process(delta: float) -> void:
 	nodo_moto.position = nodo_moto.position.move_toward(destino_actual, velocidad * delta)
 	
 	#ahora medimos las distancias para verificar si estamos en un nodo
-	#tomamos un valor de tolerancia que nunca le valor va a hacer exacto (3 pixeles)
+	#tomamos un valor de tolerancia el valor nunca va a hacer exacto (3 pixeles)
 	if nodo_moto.position.distance_to(destino_actual) < 3.0:
+		print("vamos no movimos 😍")
 		var nodo_actual_godot = ruta_completa_dijkstra[indice_actual]
 		
 		#nos frenamos para que python verifique si la calle esta bloqueada
@@ -54,27 +55,31 @@ func _process(delta: float) -> void:
 		}
 		
 		ConexionPython.enviar_json(reporte)
+		print("python necesitamos hablar 💀")
 		
 		#axtualizamos el indice
 		indice_actual += 1
-		
-		#ahora si ya es la ultima parada terminamos
-		if indice_actual >= coordenadas.size():
-			viajando = false
-	
 
 #aqui es donde vamos a manejar los evento que puedan sucerder
 func _controlador(evento: String, datos: Dictionary) -> void:
-	match evento:
-		"Moto_en_Camino":
-			var dic = datos.get("Datos", [])
-			
-			ruta_completa_dijkstra = dic["Ruta"]
-			
-			#llamamos a nuestra funcion para convertilo en coordenadas
-			_convertir_ruta()
-			viajando = true
-
+	if evento == "Moto_en_Camino":
+		print("python envio los datos de la moto 🤑")
+		var dic = datos.get("Datos", [])
+		indice_actual = 0
+		
+		ruta_completa_dijkstra = dic["Ruta"]
+		#llamamos a nuestra funcion para convertilo en coordenadas
+		_convertir_ruta()
+		print("gracias python ahora puedo calcular")
+		
+	elif evento == "No_Obstruccion":
+		print("camino despejado")
+		viajando = true
+		
+	elif evento == "Entrega_Completada":
+		print("llegamos simulacion terminada con exito")
+		viajando = false
+		
 #aqui enviamos a python el destino final para iniciar el calculo de la ruta
 func _on_destino_recibido(destino_escogido: String) -> void:
 	#hacemos una pequeña verificacion antes de enviar el comando
@@ -89,32 +94,26 @@ func _on_destino_recibido(destino_escogido: String) -> void:
 #aqui hacemos la logica para no saturar nuestra funcion principal
 #vamos a traducir las pocisiones (x,y) de  godot para el desplazamiento de la moto
 func _convertir_ruta() -> void:
+	print("llego la ruta vamos 😘")
 	#borramos por si habia una coordenada anterior
 	coordenadas.clear()
 	indice_actual = 0
+	var ruta_en_godot = get_node("Entidades_Simulacion")
 	
 	for nombre_sector in ruta_completa_dijkstra:
 		#buscamos le nodos actual en nuestra esena de godot
-		var nodo_actual = get_node_or_null(nombre_sector)
+		var nodo_actual = ruta_en_godot.get_node_or_null(nombre_sector)
 		
 		if nodo_actual != null:
+			print("las ruta estan guardadas rey")
 			#ahora lo guardamos dentro de nuestras coordenadas
 			coordenadas.append(nodo_actual.position)
+		else:
+			print("verga rey no consegui los nodos 😭")
 			
-	#una tengamos todo podemos iniciar le movimiento
+	#una vez tengamos todo podemos iniciar le movimiento
 	if coordenadas.size() > 0:
+		print("uffffff ya esta todo listo para irnos 😎")
 		viajando = true
 	else:
 		print("no se encontro una ruta valida verifique que se ha seleccionado un destino")
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

@@ -25,30 +25,42 @@ class DeliveryMoto:
         self.ruta_dijkstra = self.mapa.calcular_dijkstra(self.nodo_actual, self.destino)
 
     async def nodo_parada(self, websocket, nodo_alcanzado):
-        #aqui es donde estamos ahora
-        self.historial.append(self.nodo_actual)
-        #y aqui es a donde iremos despues
-        self.nodo_actual = nodo_alcanzado
-
-        if self.nodo_actual == self.destino:
-            print("destino alcazado")
+        #verificamos donde estamos ahora
+        try:
+            indice = self.ruta_dijkstra.index(nodo_alcanzado)
+        except ValueError:
+            print("denrto de la ruta no existe ese nodo")
+        
+        #verificamos si llegamos al nodo final
+        if indice == len(self.ruta_dijkstra) - 1:
             await websocket.send(json.dumps({"Evento": "Entrega_Completada"}))
             return
-        
-        indice_actual = self.ruta_dijkstra.index(self.nodo_actual)
-        siguiente_nodo = self.ruta_dijkstra[indice_actual + 1]
 
-        if self.mapa.G[self.nodo_actual][siguiente_nodo]['bloqueada']:
-            print("recalculando")
+        #ahora que verificamos todo podemos movernos
+        print("nos movemos 😎")
+        siguiente_nodo = self.ruta_dijkstra[indice + 1]
 
+        #ahora cerificamos si hay un bloqueo
+        if self.mapa.G[nodo_alcanzado][siguiente_nodo]["bloqueada"]:
+            #le decimos a dijkstra que estamos en el ultimo nodo alcanzado
+            self.nodo_actual = nodo_alcanzado
             self.ruta_dijkstra = self.mapa.calcular_dijkstra(self.nodo_actual, self.destino)
 
-            await self.enviar_ruta(websocket, pedido=True)
-            print("nueva ruta asignada")
-        
+            mensaje_json = {
+                "Evento": "Moto_en_Camino",
+                "Datos": {
+                    "Estado": "Procesando_Ruta",
+                    "Origen": self.nodo_actual,
+                    "Destino": self.destino,
+                    "Ruta": self.ruta_dijkstra
+                }
+            }
+            #se lo enviamos con la nueva ruta
+            await websocket.send(json.dumps(mensaje_json))
         else:
-            await websocket.send(json.dumps({"Evento": "Moto_en_Camido"}))
-            
+            await websocket.send(json.dumps({"Evento": "No_Obstruccion"}))
+            print("pase rey")
+                
 #esta funcion es la que se encagara de la conexion entre el python y el godot
 async def manejo_server_godot(websocket, mapa):
     print("nos llamo la funcion anterior")
@@ -67,7 +79,7 @@ async def manejo_server_godot(websocket, mapa):
                 id_moto = moto["Id_Moto"]
                 destino = moto["Destino"]
 
-                print(f"📥 [PYTHON] Comando Recibido. Moto ID: {id_moto} | Destino: {destino}")
+                print(f"mi amorsito me escribio a ver que dice. Moto ID: {id_moto} | Destino: {destino}")
                 
 
                 moto = DeliveryMoto(env_simpy, id_moto, mapa, destino)
@@ -75,7 +87,7 @@ async def manejo_server_godot(websocket, mapa):
                 #luego aqui con los datos moto proporcionados por el godot ejecutamos la logica del grafo
                 moto.ruta_optima()
 
-                print(f"🗺️ [PYTHON] Ruta calculada por Dijkstra: {moto.ruta_dijkstra}")
+                print(f"Dijkstra chambea: {moto.ruta_dijkstra}")
 
                 #ahora dentro de python realizamos nosotros la peticion desde python
                 mensaje_json = {
@@ -88,21 +100,26 @@ async def manejo_server_godot(websocket, mapa):
                     }
                 }
 
-            elif peticion.get("Comando") == "Llegue_Nodo":
-                nodo_alcanzado = peticion["Nodo"]
+                await websocket.send(json.dumps(mensaje_json))
+                print("carta de amor de python para godot no espiar")
 
-                #verificamos si la moto existe
-                if moto is not None:
-                    await moto.nodo_parada(websocket, nodo_alcanzado)
-                else:
-                    print("falta la moto")
+            elif peticion.get("Comando") == "Llegue_Nodo":
+                print("yaju nos movimos seria justicia")
+                nodo_alcanzado = peticion["Nodo"]
+                print(f"este es el nodo a donde vamos: {nodo_alcanzado}")
+
+                
+                await moto.nodo_parada(websocket, nodo_alcanzado)
+                    
 
             elif peticion.get("Comando") == "Obtruir_Paso":
+                print("QUE POR AQUI NO ALV")
                 ruta = peticion["Ruta"]
                 origen2 = ruta["origen"]
                 destino2 = ruta["destino"]
 
-                obstruccion = mapa.obstruir_paso(origen2, destino2)
+                mapa.obstruir_paso(origen2, destino2)
+                print("no pasaras🤑")
 
                 obstruccion_json = {
                     "Evento": "Obstrucion_Camino",
@@ -114,12 +131,13 @@ async def manejo_server_godot(websocket, mapa):
                 }
 
                 await websocket.send(json.dumps(obstruccion_json))
+                print("godot que paso rey ya respondeme 😭")
 
     except websockets.exceptions.ConnectionClosedOK:
         print("conexion terminada")
 
     except websockets.exceptions.ConnectionClosedError:
-        print("la conexion fue cerrada de golpe")
+        print("godot yo te amo no me abandones")
         
     except json.JSONDecodeError:
         print("❌ [PYTHON ERROR] ¡Llegó un paquete corrupto o no es un JSON válido!")
@@ -134,6 +152,12 @@ async def conexion_server():
     print("levantando servidor")
     #aqui vamos a hacer uso de todas la funciones para y mantener la conexion con el godot
     mapa = mg.MapaParaguana() #este es el mapa que esta hecho con grafos para dar sentido a las cosas dentro del godot
+
+    #inicializo las funciones del grafo del el sabino y punto fijo
+    mapa.construir_Punto_Fijo() #creamos punto fijo
+    mapa.constriuir_Distribuidor_El_Sabino() #creamos el sabino
+
+    print("Mapa construido con nodos:", list(mapa.G.nodes()))
 
     #creamos una funcion clon para menejar de manera asicrona la conexion con godot
     funcion_clon = partial(manejo_server_godot, mapa=mapa)
