@@ -32,13 +32,13 @@ func _ready() -> void:
 
 #aqui es donde se ejecutaria el movimiento de la moto
 func _process(delta: float) -> void:
-	if not viajando or coordenadas.size() == 0:
+	if not viajando or coordenadas.size() == 0 or indice_actual >= coordenadas.size():
 		return
 	
 	#verificamos donde estamos dentro de la esena
 	var destino_actual = coordenadas[indice_actual]
 	nodo_moto.position = nodo_moto.position.move_toward(destino_actual, velocidad * delta)
-	
+		
 	#ahora medimos las distancias para verificar si estamos en un nodo
 	#tomamos un valor de tolerancia el valor nunca va a hacer exacto (3 pixeles)
 	if nodo_moto.position.distance_to(destino_actual) < 3.0:
@@ -56,8 +56,8 @@ func _process(delta: float) -> void:
 		
 		ConexionPython.enviar_json(reporte)
 		print("python necesitamos hablar 💀")
-		
-		#axtualizamos el indice
+			
+		#actualizamos el indice
 		indice_actual += 1
 
 #aqui es donde vamos a manejar los evento que puedan sucerder
@@ -107,9 +107,10 @@ func _convertir_ruta() -> void:
 		if nodo_actual != null:
 			print("las ruta estan guardadas rey")
 			#ahora lo guardamos dentro de nuestras coordenadas
-			coordenadas.append(nodo_actual.position)
+			coordenadas.append(nodo_actual.global_position)
 		else:
 			print("verga rey no consegui los nodos 😭")
+			print("❌ FALLO: El nodo '", nombre_sector, "' no existe en Entidades_Simulacion.")
 			
 	#una vez tengamos todo podemos iniciar le movimiento
 	if coordenadas.size() > 0:

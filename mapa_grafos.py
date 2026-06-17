@@ -1,5 +1,4 @@
 import networkx as nx
-from pyvis.network import Network
 #extraemos las librerias que usaremos para la simulacion y el calculo de las distancias
 
 class MapaParaguana:

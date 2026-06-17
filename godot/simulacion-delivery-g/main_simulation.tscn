@@ -136,10 +136,10 @@ offset_bottom = 25.0
 theme_override_font_sizes/font_size = 18
 text = "La Puerta"
 
-[node name="El_Sabino" type="Marker2D" parent="Entidades_Simulacion" unique_id=184857622]
+[node name="Distribuidor_El_Sabino" type="Marker2D" parent="Entidades_Simulacion" unique_id=184857622]
 position = Vector2(648, 516)
 
-[node name="Label" type="Label" parent="Entidades_Simulacion/El_Sabino" unique_id=204432134]
+[node name="Label" type="Label" parent="Entidades_Simulacion/Distribuidor_El_Sabino" unique_id=204432134]
 offset_right = 40.0
 offset_bottom = 25.0
 theme_override_font_sizes/font_size = 18
@@ -174,10 +174,10 @@ offset_bottom = 25.0
 theme_override_font_sizes/font_size = 18
 text = "Comunidad Cardon"
 
-[node name="Hosp_Calle_Sierra" type="Marker2D" parent="Entidades_Simulacion" unique_id=263694863]
+[node name="Hospital_Calle_Sierra" type="Marker2D" parent="Entidades_Simulacion" unique_id=263694863]
 position = Vector2(1081, 127)
 
-[node name="Label" type="Label" parent="Entidades_Simulacion/Hosp_Calle_Sierra" unique_id=28673193]
+[node name="Label" type="Label" parent="Entidades_Simulacion/Hospital_Calle_Sierra" unique_id=28673193]
 offset_right = 40.0
 offset_bottom = 25.0
 theme_override_font_sizes/font_size = 18
@@ -194,4 +194,4 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Moto" parent="ContenedorMoto" unique_id=1323727844 instance=ExtResource("2_41m6i")]
-position = Vector2(125, -234)
+position = Vector2(123, -240)
