@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-ConexionPython="*uid://b3seo31ro76q1"
+ConexionPython="*res://conexion_python.gd"
 
 [debug]
 

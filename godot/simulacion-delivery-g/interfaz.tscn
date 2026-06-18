@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://d10g4eo0w31ep"]
 
-[ext_resource type="Script" uid="uid://cypupfjogeaoo" path="res://controlador_interfaz.gd" id="1_0g75o"]
+[ext_resource type="Script" uid="uid://dsrtlh1uywjlc" path="res://controlador_interfaz.gd" id="1_0g75o"]
 [ext_resource type="Texture2D" uid="uid://dstvydkebvx75" path="res://assets/moto_logo_v.png" id="2_6loih"]
 [ext_resource type="Theme" uid="uid://bbj2xgwuml55l" path="res://resources/element_themes.tres" id="2_u50k8"]
 [ext_resource type="Texture2D" uid="uid://dcm7d5d6tudmn" path="res://assets/Time_logo.png" id="4_ke4fu"]
 [ext_resource type="Texture2D" uid="uid://dcijc8xpognuc" path="res://assets/location_logo.png" id="5_0g75o"]
 [ext_resource type="FontFile" uid="uid://bp127wq36h0wg" path="res://assets/fonts/Inter-VariableFont_opsz,wght.ttf" id="5_63phn"]
 [ext_resource type="Texture2D" uid="uid://dteqgrorvl7jn" path="res://assets/Menu_hamburguesa.png" id="6_63phn"]
+[ext_resource type="FontFile" uid="uid://2eyplm6d646i" path="res://assets/fonts/Inter_24pt-Bold.ttf" id="8_63phn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ke4fu"]
 content_margin_left = 25.0
@@ -113,6 +114,25 @@ corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8fbg"]
+bg_color = Color(0.007843138, 0.07450981, 0.12941177, 1)
+border_color = Color(0, 0.8509804, 1, 1)
+corner_radius_top_left = 18
+corner_radius_top_right = 18
+corner_radius_bottom_right = 18
+corner_radius_bottom_left = 18
+corner_detail = 18
+shadow_color = Color(0, 0.8509804, 1, 0.13333334)
+shadow_size = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhims"]
+bg_color = Color(0.019607844, 0.09411765, 0.15294118, 1)
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wmky"]
+bg_color = Color(0, 0.8509804, 1, 1)
+corner_detail = 10
 
 [node name="Node2D" type="Node2D" unique_id=1659710242]
 script = ExtResource("1_0g75o")
@@ -409,6 +429,78 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_33t3g")
 theme_override_styles/hover = SubResource("StyleBoxFlat_33t3g")
 text = "▶ INICIAR RECORRIDO
 "
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=301262846]
+
+[node name="DashboardMoto" type="PanelContainer" parent="CanvasLayer2" unique_id=309948045]
+custom_minimum_size = Vector2(320, 220)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -300.0
+offset_right = -80.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_g8fbg")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer2/DashboardMoto" unique_id=118309489]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer2/DashboardMoto/MarginContainer" unique_id=2055270784]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=383332911]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8509804, 1, 1)
+theme_override_fonts/font = ExtResource("8_63phn")
+theme_override_font_sizes/font_size = 22
+text = "🛵 DASHBOARD "
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=1629378864]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=1281559182]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+text = "Velocidad: 0 km/h"
+
+[node name="Label3" type="Label" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=1667020420]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+text = "Distancia: 0 km"
+
+[node name="Label4" type="Label" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=1876178630]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+text = "Tiempo: 0 min"
+
+[node name="Label5" type="Label" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=171911361]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_63phn")
+text = "Ruta: ---"
+
+[node name="HSeparator2" type="HSeparator" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=1948306809]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=1302796981]
+layout_mode = 2
+text = "Progreso de Ruta"
+
+[node name="Progress_Ruta" type="ProgressBar" parent="CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer" unique_id=445562873]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_nhims")
+theme_override_styles/fill = SubResource("StyleBoxFlat_8wmky")
+value = 5.0
+show_percentage = false
 
 [connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada1/Zona_FrancaLabel" to="." method="_on_zona_franca_label_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Fila_Parada2/Hosp_Calle_SierraLabel" to="." method="_on_hosp_calle_sierra_label_pressed"]
