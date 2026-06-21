@@ -14,11 +14,11 @@ color = Color(0, 1, 1, 1)
 [node name="Moto" type="Node2D" unique_id=1323727844]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2034246811]
-position = Vector2(496, 405)
+position = Vector2(0, -13)
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("1_ts376")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1919317314]
-position = Vector2(479, 422)
+position = Vector2(-7, 4)
 amount = 15
 process_material = SubResource("ParticleProcessMaterial_df6gl")

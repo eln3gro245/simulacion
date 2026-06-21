@@ -2,9 +2,12 @@
 extends Control
 
 #creamos una ruta para el nodo de la moto para llamarlo
-@onready var nodo_moto = $ContenedorMoto/Moto
+@onready var nodo_moto = $Entidades_Simulacion/Moto
 
+#creamos una señal para enviarle los datos a los dashboard
+signal datos_viaje(datos: Dictionary)
 
+#estas son todas nuestras variables globales
 #aqui es donde vamos a dejar la ruta completa cuando se python nos las pase
 var ruta_completa_dijkstra: Array = []
 #aqui guardamos las coordenadas (x,y)
@@ -14,7 +17,18 @@ var indice_actual: int = 0
 #veficamos si estamos viajando
 var viajando: bool = false
 #velocidad de la moto(en pixeles)
-var velocidad: float = 250.0
+var velocidad_inicial: float = 0.0
+var velocidad_final: float = 200.0
+#aqui es donde estara la distancia 
+var distancia: int = 0
+#y aqui es donde colocaremos el tiempo
+var tiempo: int = 0
+#definimos una aceleracion para darle una apariencia de velocidad constante
+var aceleracion: float = 50.0
+
+var tiempo_acumulado = 0.0
+const FRECUENCIA_ACTUALIZACION = 0.1
+
 
 #igual que antes creamos una funcion principal de godot que va escuchar lo que tengo que decir otros mudulos 
 func _ready() -> void:
@@ -26,6 +40,10 @@ func _ready() -> void:
 	
 	interfaz_destino.destino_seleccionado.connect(_on_destino_recibido)
 	print("conectado a la interfaz")
+	
+	#le decimos donde enviar los datos de la interfaz a la funcion dentro de la interfaz para actualzar los datos
+	datos_viaje.connect(interfaz_destino._on_actualizar_interfaz)
+	
 	#aqui lo que hacemos es escuchar si el modulo de conexion envio datos 
 	ConexionPython.ruta_python.connect(_controlador)
 	
@@ -37,8 +55,25 @@ func _process(delta: float) -> void:
 	
 	#verificamos donde estamos dentro de la esena
 	var destino_actual = coordenadas[indice_actual]
-	nodo_moto.position = nodo_moto.position.move_toward(destino_actual, velocidad * delta)
-		
+	var distancia_destino = nodo_moto.position.distance_to(destino_actual)
+	
+	var velocidad_objetivo = velocidad_final
+	if distancia_destino < 50.0:
+		velocidad_objetivo = 20.0
+	
+	velocidad_inicial = move_toward(velocidad_inicial, velocidad_objetivo, aceleracion * delta)
+	
+	tiempo_acumulado += delta
+	if tiempo_acumulado >= FRECUENCIA_ACTUALIZACION:
+		#creamos un paqueto para enviarse a la interfaz 
+		var paquete = {
+			"Tipo": "Velocidad",
+			"Valor": snapped(velocidad_inicial, 0.01)
+		}
+		datos_viaje.emit(paquete)
+	
+	nodo_moto.position = nodo_moto.position.move_toward(destino_actual, velocidad_inicial * delta)
+	
 	#ahora medimos las distancias para verificar si estamos en un nodo
 	#tomamos un valor de tolerancia el valor nunca va a hacer exacto (3 pixeles)
 	if nodo_moto.position.distance_to(destino_actual) < 3.0:
@@ -56,7 +91,7 @@ func _process(delta: float) -> void:
 		
 		ConexionPython.enviar_json(reporte)
 		print("python necesitamos hablar 💀")
-			
+		
 		#actualizamos el indice
 		indice_actual += 1
 
@@ -65,6 +100,8 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 	if evento == "Moto_en_Camino":
 		print("python envio los datos de la moto 🤑")
 		var dic = datos.get("Datos", [])
+		distancia = dic["Distancia"]
+		tiempo = dic["Tiempo"]
 		indice_actual = 0
 		
 		ruta_completa_dijkstra = dic["Ruta"]
@@ -72,9 +109,26 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		_convertir_ruta()
 		print("gracias python ahora puedo calcular")
 		
+		var mensaje_interfaz = {
+			"Tipo": "Datos_Generales",
+			"Distancia": distancia,
+			"Tiempo": tiempo,
+			"Ruta_Completa_Dijkstra": ruta_completa_dijkstra
+		}
+		
+		datos_viaje.emit(mensaje_interfaz)
+		
 	elif evento == "No_Obstruccion":
 		print("camino despejado")
 		viajando = true
+		var actualizar_nodo = datos.get("Nodo")
+		
+		var actualizacion = {
+			"Tipo": "Nodo1",
+			"Siguiente_Nodo": actualizar_nodo
+		}
+		
+		datos_viaje.emit(actualizacion)
 		
 	elif evento == "Entrega_Completada":
 		print("llegamos simulacion terminada con exito")

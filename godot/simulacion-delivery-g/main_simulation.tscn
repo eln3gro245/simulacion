@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfwkdv51uddfq"]
 
 [ext_resource type="Texture2D" uid="uid://cpo1h8ehac1ld" path="res://Mapa v2.png" id="1_48u2w"]
-[ext_resource type="Script" uid="uid://bmn0njkdgijc0" path="res://controlador.gd" id="1_bortu"]
+[ext_resource type="Script" uid="uid://c57iimdaxeq8s" path="res://controlador.gd" id="1_bortu"]
 [ext_resource type="PackedScene" uid="uid://krxb5omopak" path="res://moto_delivery.tscn" id="2_41m6i"]
 [ext_resource type="FontFile" uid="uid://2eyplm6d646i" path="res://assets/fonts/Inter_24pt-Bold.ttf" id="3_4yc0y"]
 [ext_resource type="PackedScene" uid="uid://d10g4eo0w31ep" path="res://interfaz.tscn" id="4_bortu"]
@@ -29,7 +29,7 @@ stretch_mode = 5
 [node name="Entidades_Simulacion" type="Node2D" parent="." unique_id=1251033558]
 
 [node name="Moto" parent="Entidades_Simulacion" unique_id=1323727844 instance=ExtResource("2_41m6i")]
-position = Vector2(123, -240)
+position = Vector2(621, 179)
 
 [node name="Rutas_Lineas" type="Node2D" parent="Entidades_Simulacion" unique_id=320002121]
 
