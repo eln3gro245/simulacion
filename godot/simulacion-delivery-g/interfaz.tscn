@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d10g4eo0w31ep"]
 
-[ext_resource type="Script" uid="uid://dsrtlh1uywjlc" path="res://controlador_interfaz.gd" id="1_0g75o"]
+[ext_resource type="Script" uid="uid://cypupfjogeaoo" path="res://controlador_interfaz.gd" id="1_0g75o"]
 [ext_resource type="Texture2D" uid="uid://dstvydkebvx75" path="res://assets/moto_logo_v.png" id="2_6loih"]
 [ext_resource type="Theme" uid="uid://bbj2xgwuml55l" path="res://resources/element_themes.tres" id="2_u50k8"]
 [ext_resource type="Texture2D" uid="uid://dcm7d5d6tudmn" path="res://assets/Time_logo.png" id="4_ke4fu"]

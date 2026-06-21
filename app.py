@@ -13,6 +13,8 @@ class DeliveryMoto:
         self.nodo_actual = "Centro"
         self.velocidad = 40 # km/h
         self.destino = destino
+        self.distancia = 0
+        self.tiempo = 0
 
         #aqui asignamos una atributo para mandar la ruta calcula mendiate dijkstra para que se muestre en el godot
         self.ruta_dijkstra = []
@@ -24,6 +26,11 @@ class DeliveryMoto:
         #hacemos el calculo de la ruta mediante dijkstra
         self.ruta_dijkstra = self.mapa.calcular_dijkstra(self.nodo_actual, self.destino)
 
+        #calculamos la distancia entre todo el recorrido
+        self.distancia = sum(self.mapa.G[self.ruta_dijkstra[i]][self.ruta_dijkstra[i+1]]['distancia'] for i in range(len(self.ruta_dijkstra) - 1))
+
+        self.tiempo = (self.distancia/ self.velocidad) * 60
+
     async def nodo_parada(self, websocket, nodo_alcanzado):
         #verificamos donde estamos ahora
         try:
@@ -33,7 +40,7 @@ class DeliveryMoto:
         
         #verificamos si llegamos al nodo final
         if indice == len(self.ruta_dijkstra) - 1:
-            await websocket.send(json.dumps({"Evento": "Entrega_Completada"}))
+            await websocket.send(json.dumps({"Evento": "Entrega_Completada", "Estado": "Ruta_completada"}))
             return
 
         #ahora que verificamos todo podemos movernos
@@ -52,13 +59,15 @@ class DeliveryMoto:
                     "Estado": "Procesando_Ruta",
                     "Origen": self.nodo_actual,
                     "Destino": self.destino,
-                    "Ruta": self.ruta_dijkstra
+                    "Ruta": self.ruta_dijkstra,
+                    "Distancia": self.distancia,
+                    "Tiempo": self.tiempo
                 }
             }
             #se lo enviamos con la nueva ruta
             await websocket.send(json.dumps(mensaje_json))
         else:
-            await websocket.send(json.dumps({"Evento": "No_Obstruccion"}))
+            await websocket.send(json.dumps({"Evento": "No_Obstruccion", "Nodo": siguiente_nodo}))
             print("pase rey")
                 
 #esta funcion es la que se encagara de la conexion entre el python y el godot
@@ -96,7 +105,9 @@ async def manejo_server_godot(websocket, mapa):
                         "Estado": "Procesando_Ruta",
                         "Origen": moto.nodo_actual,
                         "Destino": destino,
-                        "Ruta": moto.ruta_dijkstra
+                        "Ruta": moto.ruta_dijkstra,
+                        "Distancia": moto.distancia,
+                        "Tiempo": moto.tiempo
                     }
                 }
 
