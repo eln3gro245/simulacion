@@ -186,10 +186,257 @@ offset_bottom = 25.0
 theme_override_font_sizes/font_size = 18
 text = "Hosp. Calle Sierra"
 
+[node name="Cruces_Intermedios" type="Node2D" parent="Entidades_Simulacion" unique_id=787652335]
+
+[node name="Centro_a_Las_Margaritas" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1747825774]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Las_Margaritas" unique_id=2132839931]
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Las_Margaritas" unique_id=721454070]
+position = Vector2(947, 272)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Las_Margaritas" unique_id=1072417783]
+position = Vector2(885, 404)
+
+[node name="Centro_Maraven" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1114595824]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=1759468906]
+position = Vector2(618, 422)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=1400608369]
+position = Vector2(822, 450)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=379251769]
+position = Vector2(849, 483)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=374994648]
+position = Vector2(795, 514)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=1493098315]
+position = Vector2(752, 613)
+
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=1415015427]
+position = Vector2(687, 600)
+
+[node name="Cruce7" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=1427474604]
+position = Vector2(667, 733)
+
+[node name="Cruce8" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=2056641911]
+position = Vector2(628, 746)
+
+[node name="Cruce9" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=992624823]
+position = Vector2(603, 705)
+
+[node name="Cruce10" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_Maraven" unique_id=1376648020]
+position = Vector2(534, 700)
+
+[node name="Centro_a_Punta_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=165556726]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=743587225]
+position = Vector2(569, 197)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=184828609]
+position = Vector2(572, 278)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=1552919628]
+position = Vector2(621, 274)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=1088015979]
+position = Vector2(615, 425)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=497928103]
+position = Vector2(824, 448)
+
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=2130069884]
+position = Vector2(853, 480)
+
+[node name="Cruce7" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=1822396004]
+position = Vector2(796, 516)
+
+[node name="Maraven_a_La_Puerta" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=824039103]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=37695406]
+position = Vector2(505, 703)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=653304950]
+position = Vector2(504, 734)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=1884354150]
+position = Vector2(537, 743)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=1288978200]
+position = Vector2(572, 723)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=643315188]
+position = Vector2(596, 772)
+
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=1432881537]
+position = Vector2(636, 751)
+
+[node name="Cruce7" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=1471941089]
+position = Vector2(710, 786)
+
+[node name="Cruce8" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=1631237260]
+position = Vector2(775, 651)
+
+[node name="Maraven_a_Punta_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=488110087]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=597324289]
+position = Vector2(539, 708)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=1867716424]
+position = Vector2(537, 739)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=1446306125]
+position = Vector2(553, 768)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=1300823903]
+position = Vector2(585, 750)
+
+[node name="Cruce5_pc" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=2137964735]
+position = Vector2(598, 773)
+
+[node name="Cruce6_pc" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=1730006096]
+position = Vector2(636, 751)
+
+[node name="Cruce7" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=361976788]
+position = Vector2(672, 767)
+
+[node name="Las_Margaritas_a_La_Puerta" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1110563829]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_La_Puerta" unique_id=1165974968]
+position = Vector2(882, 410)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_La_Puerta" unique_id=349765697]
+position = Vector2(844, 486)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_La_Puerta" unique_id=1561826663]
+position = Vector2(828, 530)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_La_Puerta" unique_id=1808108585]
+position = Vector2(784, 628)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_La_Puerta" unique_id=1798710356]
+position = Vector2(873, 666)
+
+[node name="Las_Margaritas_a_El_Sabino" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=748910047]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=623808370]
+position = Vector2(892, 417)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1429114659]
+position = Vector2(893, 457)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1047497729]
+position = Vector2(878, 468)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1643939992]
+position = Vector2(827, 449)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1664652467]
+position = Vector2(732, 444)
+
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=2046945119]
+position = Vector2(731, 468)
+
+[node name="El_Sabino_a_la_UNEFA" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=918906887]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=331208123]
+position = Vector2(522, 590)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=1712343292]
+position = Vector2(539, 623)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=1909081429]
+position = Vector2(494, 648)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=845496562]
+position = Vector2(503, 671)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=1974727894]
+position = Vector2(504, 694)
+
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=663147612]
+position = Vector2(486, 697)
+
+[node name="El_Sabino_a_Zona_Franca" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=751540096]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=1585948671]
+position = Vector2(731, 468)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=472322337]
+position = Vector2(732, 368)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=267795738]
+position = Vector2(682, 396)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=89613176]
+position = Vector2(641, 398)
+
+[node name="El_Sabino_a_Comunidad_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1939890602]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=1483940420]
+position = Vector2(677, 570)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=1428999773]
+position = Vector2(444, 703)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=2001466895]
+position = Vector2(456, 724)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=1620176392]
+position = Vector2(449, 732)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=543030437]
+position = Vector2(453, 739)
+
+[node name="El_Sabino_al_Hosp_Calle_Sierra" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=2086829208]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_al_Hosp_Calle_Sierra" unique_id=720321399]
+position = Vector2(689, 604)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_al_Hosp_Calle_Sierra" unique_id=293257670]
+position = Vector2(708, 597)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_al_Hosp_Calle_Sierra" unique_id=261755459]
+position = Vector2(750, 613)
+
+[node name="Cruce4_hcs" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_al_Hosp_Calle_Sierra" unique_id=1964889065]
+position = Vector2(795, 517)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_al_Hosp_Calle_Sierra" unique_id=784471858]
+position = Vector2(1069, 358)
+
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_al_Hosp_Calle_Sierra" unique_id=374309472]
+position = Vector2(1076, 328)
+
+[node name="Cruce7" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_al_Hosp_Calle_Sierra" unique_id=1328633356]
+position = Vector2(1061, 128)
+
+[node name="Zona_Franca_a_Comunidad_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1720926775]
+
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Zona_Franca_a_Comunidad_Cardon" unique_id=1477884438]
+position = Vector2(639, 435)
+
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Zona_Franca_a_Comunidad_Cardon" unique_id=1139884644]
+position = Vector2(732, 445)
+
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Zona_Franca_a_Comunidad_Cardon" unique_id=402779926]
+position = Vector2(731, 469)
+
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Zona_Franca_a_Comunidad_Cardon" unique_id=1550117128]
+position = Vector2(555, 573)
+
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Zona_Franca_a_Comunidad_Cardon" unique_id=1886780628]
+position = Vector2(603, 707)
+
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Zona_Franca_a_Comunidad_Cardon" unique_id=422248835]
+position = Vector2(419, 808)
+
 [node name="Interfaz_Usuario" type="CanvasLayer" parent="." unique_id=1786327857]
 
 [node name="Node2D" parent="Interfaz_Usuario" unique_id=1659710242 instance=ExtResource("4_bortu")]
-position = Vector2(-5, 0)
+position = Vector2(777, 170)
 
 [node name="ContenedorMoto" type="Control" parent="." unique_id=302289098]
 anchors_preset = 0
