@@ -32,7 +32,6 @@ func _on_boton_recorrido_pressed() -> void:
 
 func _on_actualizar_interfaz(info: Dictionary):
 	#aqui actualizamos la interfaz con los llamo de controlador
-	print("las llaves que se reciben", info.keys())
 	match info.get("Tipo"):
 		"Datos_Generales":
 			print("hola")

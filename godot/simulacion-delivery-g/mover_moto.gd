@@ -48,10 +48,6 @@ func _physics_process(delta: float) -> void:
 		#nos frenamos para que python verifique si la calle esta bloqueada
 		viajando = false
 		print("python necesitamos hablar 💀")
-		
-		#actualizamos el indice
-		indice_actual += 1
-		
 
 func establecer_objetivo(coords: Vector2, nombre: String) -> void:
 	destino_actual = coords

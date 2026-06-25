@@ -37,6 +37,7 @@ class DeliveryMoto:
             indice = self.ruta_dijkstra.index(nodo_alcanzado)
         except ValueError:
             print("denrto de la ruta no existe ese nodo")
+            return
         
         #verificamos si llegamos al nodo final
         if indice == len(self.ruta_dijkstra) - 1:
@@ -116,13 +117,16 @@ async def manejo_server_godot(websocket, mapa):
 
             elif peticion.get("Comando") == "Llegue_Nodo":
                 print("yaju nos movimos seria justicia")
-                nodo_alcanzado = peticion["Nodo"]
-                print(f"este es el nodo a donde vamos: {nodo_alcanzado}")
+                print(f"DEBUG: Recibido de Godot: {peticion}")
+                nodo_alcanzado = peticion["Tipo"]
 
-                
-                await moto.nodo_parada(websocket, nodo_alcanzado)
+                if nodo_alcanzado == "Cruce":
+                    print("identifica, identificate no te tengo anotado en mi celular perro")
+                    await websocket.send(json.dumps({"Evento": "Es_Cruce"}))
+                else:
+                    print("sos admin usted si tiene derechos no como los negors")
+                    await moto.nodo_parada(websocket, nodo_alcanzado)
                     
-
             elif peticion.get("Comando") == "Obtruir_Paso":
                 print("QUE POR AQUI NO ALV")
                 ruta = peticion["Ruta"]
@@ -154,7 +158,7 @@ async def manejo_server_godot(websocket, mapa):
         print("❌ [PYTHON ERROR] ¡Llegó un paquete corrupto o no es un JSON válido!")
         
     except Exception as e:
-        print(f"💥 [PYTHON ERROR] Ocurrió un error inesperado en el bucle: {e}")
+        print(f"💥 [PYTHON ERROR] Ocurrió un error inesperado en {e}")
         
     finally:
         print("🧹 [PYTHON] Limpiando recursos de la conexión. Servidor listo para el siguiente intento.")

@@ -322,98 +322,98 @@ position = Vector2(784, 628)
 [node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_La_Puerta" unique_id=1798710356]
 position = Vector2(873, 666)
 
-[node name="Las_Margaritas_a_El_Sabino" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=748910047]
+[node name="Las_Margaritas_a_Distribuidor_El_Sabino" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=748910047]
 
-[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=623808370]
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_Distribuidor_El_Sabino" unique_id=623808370]
 position = Vector2(892, 417)
 
-[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1429114659]
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_Distribuidor_El_Sabino" unique_id=1429114659]
 position = Vector2(893, 457)
 
-[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1047497729]
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_Distribuidor_El_Sabino" unique_id=1047497729]
 position = Vector2(878, 468)
 
-[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1643939992]
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_Distribuidor_El_Sabino" unique_id=1643939992]
 position = Vector2(827, 449)
 
-[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=1664652467]
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_Distribuidor_El_Sabino" unique_id=1664652467]
 position = Vector2(732, 444)
 
-[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_El_Sabino" unique_id=2046945119]
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_Distribuidor_El_Sabino" unique_id=2046945119]
 position = Vector2(731, 468)
 
-[node name="El_Sabino_a_la_UNEFA" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=918906887]
+[node name="Distribuidor_El_Sabino_a_UNEFA" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=918906887]
 
-[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=331208123]
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_UNEFA" unique_id=331208123]
 position = Vector2(522, 590)
 
-[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=1712343292]
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_UNEFA" unique_id=1712343292]
 position = Vector2(539, 623)
 
-[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=1909081429]
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_UNEFA" unique_id=1909081429]
 position = Vector2(494, 648)
 
-[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=845496562]
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_UNEFA" unique_id=845496562]
 position = Vector2(503, 671)
 
-[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=1974727894]
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_UNEFA" unique_id=1974727894]
 position = Vector2(504, 694)
 
-[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_la_UNEFA" unique_id=663147612]
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_UNEFA" unique_id=663147612]
 position = Vector2(486, 697)
 
-[node name="El_Sabino_a_Zona_Franca" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=751540096]
+[node name="Distribuidor_El_Sabino_a_Zona_Franca" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=751540096]
 
-[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=1585948671]
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Zona_Franca" unique_id=1585948671]
 position = Vector2(731, 468)
 
-[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=472322337]
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Zona_Franca" unique_id=472322337]
 position = Vector2(732, 368)
 
-[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=267795738]
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Zona_Franca" unique_id=267795738]
 position = Vector2(682, 396)
 
-[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Zona_Franca" unique_id=89613176]
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Zona_Franca" unique_id=89613176]
 position = Vector2(641, 398)
 
-[node name="El_Sabino_a_Comunidad_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1939890602]
+[node name="Distribuidor_El_Sabino_a_Comunidad_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1939890602]
 
-[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=1483940420]
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Comunidad_Cardon" unique_id=1483940420]
 position = Vector2(677, 570)
 
-[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=1428999773]
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Comunidad_Cardon" unique_id=1428999773]
 position = Vector2(444, 703)
 
-[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=2001466895]
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Comunidad_Cardon" unique_id=2001466895]
 position = Vector2(456, 724)
 
-[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=1620176392]
+[node name="Cruce4" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Comunidad_Cardon" unique_id=1620176392]
 position = Vector2(449, 732)
 
-[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Comunidad_Cardon" unique_id=543030437]
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Comunidad_Cardon" unique_id=543030437]
 position = Vector2(453, 739)
 
-[node name="El_Sabino_a_Hosp_Calle_Sierra" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=2086829208]
+[node name="Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=2086829208]
 
-[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Hosp_Calle_Sierra" unique_id=720321399]
+[node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=720321399]
 position = Vector2(689, 604)
 
-[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Hosp_Calle_Sierra" unique_id=293257670]
+[node name="Cruce2" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=293257670]
 position = Vector2(708, 597)
 
-[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Hosp_Calle_Sierra" unique_id=261755459]
+[node name="Cruce3" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=261755459]
 position = Vector2(750, 613)
 
-[node name="Cruce4_hcs" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Hosp_Calle_Sierra" unique_id=1964889065]
+[node name="Cruce4_hcs" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=1964889065]
 position = Vector2(795, 517)
 
-[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Hosp_Calle_Sierra" unique_id=784471858]
+[node name="Cruce5" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=784471858]
 position = Vector2(1069, 358)
 
-[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Hosp_Calle_Sierra" unique_id=374309472]
+[node name="Cruce6" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=374309472]
 position = Vector2(1076, 328)
 
-[node name="Cruce7" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/El_Sabino_a_Hosp_Calle_Sierra" unique_id=1328633356]
+[node name="Cruce7" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=1328633356]
 position = Vector2(1061, 128)
 
 [node name="Zona_Franca_a_Comunidad_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1720926775]

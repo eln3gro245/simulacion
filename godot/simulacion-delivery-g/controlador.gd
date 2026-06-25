@@ -14,6 +14,7 @@ signal datos_viaje(datos: Dictionary)
 var ruta_completa_dijkstra: Array = []
 #aqui guardamos las coordenadas (x,y)
 var coordenadas: Array[Vector2] = []
+var mapa_indices: Dictionary = {}
 #el indice para la interacion entre nodos 
 var indice_actual: int = 0
 #veficamos si estamos viajando
@@ -22,7 +23,6 @@ var viajando: bool = false
 var distancia: int = 0
 #y aqui es donde colocaremos el tiempo
 var tiempo: int = 0
-
 var actualizar_nodo: String = ""
 
 #igual que antes creamos una funcion principal de godot que va escuchar lo que tengo que decir otros mudulos 
@@ -52,16 +52,20 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		var dic = datos.get("Datos", [])
 		distancia = dic["Distancia"]
 		tiempo = dic["Tiempo"]
-		indice_actual = 0
 		viajando = true
 		
 		ruta_completa_dijkstra = dic["Ruta"]
 		var lugar = get_node("Entidades_Simulacion")
 		#llamamos a nuestra funcion para convertilo en coordenadas
-		coordenadas = gestor_visual._convertir_ruta(lugar, ruta_completa_dijkstra)
+		var resultado = gestor_visual._convertir_ruta(lugar, ruta_completa_dijkstra)
 		
+		coordenadas = resultado["coordenadas"]
+		mapa_indices = resultado["mapa"]
+		var nombre_objetivo = mapa_indices.get(0, "punto_inicial")
+		
+		indice_actual = 0
 		nodo_moto.coordenadas = coordenadas
-		nodo_moto.establecer_objetivo(coordenadas[indice_actual], ruta_completa_dijkstra[indice_actual])
+		nodo_moto.establecer_objetivo(coordenadas[indice_actual], nombre_objetivo)
 		
 		print("gracias python ahora puedo calcular")
 		
@@ -80,12 +84,9 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		actualizar_nodo = datos.get("Nodo")
 		
 		if indice_actual < coordenadas.size():
-			viajando = true
 			# Pasamos el nombre si es un nodo de Python, o "" si es cruce
 			# Aquí podrías agregar lógica para saber qué nombre pasar
 			nodo_moto.establecer_objetivo(coordenadas[indice_actual], "")
-		else:
-			print("¡Llegamos al destino final!")
 		
 		var actualizacion = {
 			"Tipo": "Nodo1",
@@ -93,6 +94,10 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		}
 		
 		datos_viaje.emit(actualizacion)
+	
+	elif evento == "Es_Cruce":
+		print("mano estamos crusando aviso cualquier cosa")
+		nodo_moto.establecer_objetivo(coordenadas[indice_actual], "")
 		
 	elif evento == "Entrega_Completada":
 		print("llegamos simulacion terminada con exito")
@@ -109,12 +114,19 @@ func _on_destino_recibido(destino_escogido: String) -> void:
 	#enviamos la destino al comando que encedera toda la logica de python
 	ConexionPython.enviar_arranque_moto(destino_escogido)
 
-func _on_moto_llego_a_nodo(nombre_nodo: String) -> void:
-	var nodo_real = get_node_or_null("Entidades_Simulacion/" + nombre_nodo)
-
-	if nodo_real != null:
-		var reporte = { "Comando": "Llegue_Nodo", "Nodo": nombre_nodo }
-		ConexionPython.enviar_json(reporte)
+func _on_moto_llego_a_nodo(_nombre_nodo: String) -> void:
+	print("wuajuuuuu")
+	indice_actual += 1
+	
+	if indice_actual < coordenadas.size():
+		print("wario por que wario nose")
+		var tipo = mapa_indices.get(indice_actual, "Cruce")
+		
+		ConexionPython.enviar_json({
+			"Comando": "Llegue_Nodo",
+			"Indice": indice_actual,
+			"Tipo": tipo
+		})
 
 func _on_moto_velocidad_cambio(nueva_velocidad: float):
 	var paquete = {
