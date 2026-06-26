@@ -8,6 +8,8 @@ signal destino_seleccionado(destino: String)
 @onready var distacia = $CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer/Label3
 @onready var tiempo = $CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer/Label4
 @onready var ruta = $CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer/Label5
+@onready var progreso = $CanvasLayer2/DashboardMoto/MarginContainer/VBoxContainer/Progress_Ruta
+@onready var estado = $CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/Label
 
 #esta es la variable que almacena el distino elegido pero no hace mas nada que guardarlo
 var destino_final: String = ""
@@ -34,8 +36,8 @@ func _on_actualizar_interfaz(info: Dictionary):
 	#aqui actualizamos la interfaz con los llamo de controlador
 	match info.get("Tipo"):
 		"Datos_Generales":
-			print("hola")
-			print("tenemos los datos")
+			var estado_acomodado = str(info["Estado"])
+			estado.text = "Estado: " + estado_acomodado.replace("_", " ")
 			distacia.text = "Distancia: " + str(info["Distancia"]) + " km"
 			tiempo.text = "Tiempo: " + str(info["Tiempo"]) + " min"
 			var nombres_limpios = []
@@ -46,11 +48,12 @@ func _on_actualizar_interfaz(info: Dictionary):
 			
 			ruta.text = "Ruta: " + ruta_acomodada
 		"Nodo1":
-			print("hola otra vez")
 			nodo_actual.text = "siguiente nodo: " + str(info["Siguiente_Nodo"])
 		"Velocidad":
 			print("verga que hola alv")
 			velocidad.text = "Velocidad: " + str(info["Valor"]) + " km/h"
+		"Progreso":
+			progreso.value = info["Valor"] * 100
 
 func _on_zona_franca_label_pressed() -> void:
 	_on_oprimir_boton("Zona_Franca")

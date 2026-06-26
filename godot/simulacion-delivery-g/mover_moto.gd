@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	
 	var velocidad_objetivo = velocidad_final
 	if distancia_destino < 50.0:
-		velocidad_objetivo = 200.0
+		velocidad_objetivo = lerp(0.0, velocidad_final, distancia_destino / 50.0)
 	
 	velocidad_inicial = move_toward(velocidad_inicial, velocidad_objetivo, aceleracion * delta)
 	

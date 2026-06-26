@@ -3,6 +3,7 @@ extends Control
 
 #creamos una ruta para el nodo de la moto para llamarlo
 @onready var nodo_moto = $Entidades_Simulacion/Moto
+@onready var lineas_rutas = $Entidades_Simulacion/Rutas_Lineas
 const GestorVisual = preload("res://gestor_visual.gd")
 var gestor_visual = GestorVisual.new()
 
@@ -24,6 +25,7 @@ var distancia: int = 0
 #y aqui es donde colocaremos el tiempo
 var tiempo: int = 0
 var actualizar_nodo: String = ""
+var estado: String = ""
 
 #igual que antes creamos una funcion principal de godot que va escuchar lo que tengo que decir otros mudulos 
 func _ready() -> void:
@@ -50,6 +52,7 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 	if evento == "Moto_en_Camino":
 		print("python envio los datos de la moto 🤑")
 		var dic = datos.get("Datos", [])
+		estado = dic["Estado"]
 		distancia = dic["Distancia"]
 		tiempo = dic["Tiempo"]
 		viajando = true
@@ -63,6 +66,8 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		mapa_indices = resultado["mapa"]
 		var nombre_objetivo = mapa_indices.get(0, "punto_inicial")
 		
+		gestor_visual.visualizar_ruta(ruta_completa_dijkstra, lineas_rutas)
+		
 		indice_actual = 0
 		nodo_moto.coordenadas = coordenadas
 		nodo_moto.establecer_objetivo(coordenadas[indice_actual], nombre_objetivo)
@@ -71,6 +76,7 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		
 		var mensaje_interfaz = {
 			"Tipo": "Datos_Generales",
+			"Estado": estado,
 			"Distancia": distancia,
 			"Tiempo": tiempo,
 			"Ruta_Completa_Dijkstra": ruta_completa_dijkstra
@@ -82,6 +88,7 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		print("camino despejado")
 		viajando = true
 		actualizar_nodo = datos.get("Nodo")
+		
 		
 		if indice_actual < coordenadas.size():
 			# Pasamos el nombre si es un nodo de Python, o "" si es cruce
@@ -100,7 +107,12 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		nodo_moto.establecer_objetivo(coordenadas[indice_actual], "")
 		
 	elif evento == "Entrega_Completada":
-		print("llegamos simulacion terminada con exito")
+		estado = datos.get("Estado")
+		var otro_mensaje = {
+			"Estado": estado
+		}
+		datos_viaje.emit(otro_mensaje)
+		
 		viajando = false
 		
 #aqui enviamos a python el destino final para iniciar el calculo de la ruta
@@ -117,6 +129,9 @@ func _on_destino_recibido(destino_escogido: String) -> void:
 func _on_moto_llego_a_nodo(_nombre_nodo: String) -> void:
 	print("wuajuuuuu")
 	indice_actual += 1
+	
+	var progreso = float(indice_actual) / float(coordenadas.size())
+	datos_viaje.emit({"Tipo": "Progreso", "Valor": progreso})
 	
 	if indice_actual < coordenadas.size():
 		print("wario por que wario nose")

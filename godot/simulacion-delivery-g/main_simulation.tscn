@@ -36,61 +36,73 @@ script = ExtResource("4_6haqo")
 [node name="Rutas_Lineas" type="Node2D" parent="Entidades_Simulacion" unique_id=320002121]
 
 [node name="Centro_Las_Margaritas" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1792318132]
+visible = false
 points = PackedVector2Array(626, 189, 778, 173, 943, 275, 882, 410, 901, 416)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
 [node name="Centro_Maraven" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=2121108625]
+visible = false
 points = PackedVector2Array(622, 187, 628, 246, 615, 312, 621, 342, 613, 419, 631, 432, 656, 439, 824, 448, 846, 475, 846, 486, 794, 514, 747, 610, 707, 598, 687, 603, 695, 642, 694, 661, 669, 732, 630, 747, 601, 701, 568, 704, 520, 696)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
 [node name="Centro_Punta_Cardon" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1868303366]
+visible = false
 points = PackedVector2Array(622, 190, 568, 195, 571, 247, 569, 278, 621, 272, 615, 310, 620, 337, 614, 415, 635, 434, 675, 439, 824, 448, 846, 473, 845, 487, 794, 513, 692, 742, 698, 749)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
 [node name="Maraven_La_Puerta" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=567083544]
+visible = false
 points = PackedVector2Array(521, 703, 503, 703, 503, 736, 534, 743, 571, 723, 596, 772, 633, 750, 677, 772, 709, 785, 774, 652, 860, 693, 862, 687)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
 [node name="Maraven_Punta_Cardon" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=831611588]
+visible = false
 points = PackedVector2Array(517, 706, 537, 707, 537, 741, 553, 768, 585, 750, 597, 772, 633, 751, 669, 768, 685, 758, 696, 744)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
 [node name="Las_Margaritas_La_Puerta" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=41160284]
+visible = false
 points = PackedVector2Array(904, 418, 903, 410, 883, 408, 843, 488, 797, 514, 828, 529, 783, 627, 872, 666, 863, 687)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
-[node name="Las_Margaritas_El_Sabino" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1914774638]
+[node name="Las_Margaritas_Distribuidor_El_Sabino" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1914774638]
+visible = false
 points = PackedVector2Array(904, 415, 897, 419, 891, 419, 892, 460, 877, 467, 825, 446, 733, 440, 731, 469, 649, 516)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
-[node name="El_Sabino_UNEFA" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=716489820]
+[node name="Distribuidor_El_Sabino_UNEFA" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=716489820]
+visible = false
 points = PackedVector2Array(648, 514, 520, 591, 539, 624, 492, 649, 504, 668, 505, 694, 486, 696, 487, 683)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
-[node name="El_Sabino_Zona_Franca" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=599081528]
+[node name="Distribuidor_El_Sabino_Zona_Franca" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=599081528]
+visible = false
 points = PackedVector2Array(648, 514, 731, 466, 731, 366, 680, 396, 640, 397, 640, 405)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
-[node name="El_Sabino_Comunidad_Cardon" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1691188064]
+[node name="Distribuidor_El_Sabino_Comunidad_Cardon" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1691188064]
+visible = false
 points = PackedVector2Array(649, 516, 676, 569, 442, 703, 456, 724, 448, 729, 454, 738, 439, 759, 425, 781)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
-[node name="El_Sabino_Hosp_Calle_Sierra" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1587936884]
+[node name="Distribuidor_El_Sabino_Hospital_Calle_Sierra" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1587936884]
+visible = false
 points = PackedVector2Array(647, 514, 681, 580, 687, 602, 707, 597, 747, 609, 798, 514, 1067, 358, 1077, 327, 1073, 304, 1059, 127, 1078, 124)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
 
 [node name="Zona_Franca_Comunidad_Cardon" type="Line2D" parent="Entidades_Simulacion/Rutas_Lineas" unique_id=1454152516]
+visible = false
 points = PackedVector2Array(641, 406, 638, 432, 730, 443, 731, 467, 553, 571, 578, 623, 601, 706, 417, 810, 426, 782)
 width = 3.0
 default_color = Color(0, 0.8980392, 1, 1)
@@ -191,6 +203,7 @@ text = "Hosp. Calle Sierra"
 [node name="Cruces_Intermedios" type="Node2D" parent="Entidades_Simulacion" unique_id=787652335]
 
 [node name="Centro_a_Las_Margaritas" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1747825774]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Las_Margaritas" unique_id=2132839931]
 position = Vector2(779, 173)
@@ -202,6 +215,7 @@ position = Vector2(947, 272)
 position = Vector2(885, 404)
 
 [node name="Centro_a_Maraven" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1114595824]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Maraven" unique_id=1759468906]
 position = Vector2(618, 422)
@@ -234,6 +248,7 @@ position = Vector2(603, 705)
 position = Vector2(534, 700)
 
 [node name="Centro_a_Punta_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=165556726]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Centro_a_Punta_Cardon" unique_id=743587225]
 position = Vector2(569, 197)
@@ -257,6 +272,7 @@ position = Vector2(853, 480)
 position = Vector2(796, 516)
 
 [node name="Maraven_a_La_Puerta" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=824039103]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_La_Puerta" unique_id=37695406]
 position = Vector2(505, 703)
@@ -283,6 +299,7 @@ position = Vector2(710, 786)
 position = Vector2(775, 651)
 
 [node name="Maraven_a_Punta_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=488110087]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Maraven_a_Punta_Cardon" unique_id=597324289]
 position = Vector2(539, 708)
@@ -306,6 +323,7 @@ position = Vector2(636, 751)
 position = Vector2(672, 767)
 
 [node name="Las_Margaritas_a_La_Puerta" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1110563829]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_La_Puerta" unique_id=1165974968]
 position = Vector2(882, 410)
@@ -323,6 +341,7 @@ position = Vector2(784, 628)
 position = Vector2(873, 666)
 
 [node name="Las_Margaritas_a_Distribuidor_El_Sabino" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=748910047]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Las_Margaritas_a_Distribuidor_El_Sabino" unique_id=623808370]
 position = Vector2(892, 417)
@@ -343,6 +362,7 @@ position = Vector2(732, 444)
 position = Vector2(731, 468)
 
 [node name="Distribuidor_El_Sabino_a_UNEFA" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=918906887]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_UNEFA" unique_id=331208123]
 position = Vector2(522, 590)
@@ -363,6 +383,7 @@ position = Vector2(504, 694)
 position = Vector2(486, 697)
 
 [node name="Distribuidor_El_Sabino_a_Zona_Franca" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=751540096]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Zona_Franca" unique_id=1585948671]
 position = Vector2(731, 468)
@@ -377,6 +398,7 @@ position = Vector2(682, 396)
 position = Vector2(641, 398)
 
 [node name="Distribuidor_El_Sabino_a_Comunidad_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1939890602]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Comunidad_Cardon" unique_id=1483940420]
 position = Vector2(677, 570)
@@ -394,6 +416,7 @@ position = Vector2(449, 732)
 position = Vector2(453, 739)
 
 [node name="Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=2086829208]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Distribuidor_El_Sabino_a_Hospital_Calle_Sierra" unique_id=720321399]
 position = Vector2(689, 604)
@@ -417,6 +440,7 @@ position = Vector2(1076, 328)
 position = Vector2(1061, 128)
 
 [node name="Zona_Franca_a_Comunidad_Cardon" type="Node2D" parent="Entidades_Simulacion/Cruces_Intermedios" unique_id=1720926775]
+visible = false
 
 [node name="Cruce1" type="Marker2D" parent="Entidades_Simulacion/Cruces_Intermedios/Zona_Franca_a_Comunidad_Cardon" unique_id=1477884438]
 position = Vector2(639, 435)

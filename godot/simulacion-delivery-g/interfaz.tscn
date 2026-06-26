@@ -224,7 +224,7 @@ stretch_mode = 5
 layout_mode = 2
 theme_override_fonts/font = ExtResource("5_63phn")
 theme_override_font_sizes/font_size = 16
-text = "Parada actual: --"
+text = "Parada actual: Centro"
 
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1582651059]
 custom_minimum_size = Vector2(300, 250)

@@ -36,5 +36,13 @@ func _convertir_ruta(lugar: Node, ruta: Array) -> Dictionary:
 		los_nodos[nuevas_coordenadas.size()] = ultimo_nombre
 		nuevas_coordenadas.append(ultimo_elemento.global_position)
 	return { "coordenadas": nuevas_coordenadas, "mapa": los_nodos }
+
+func visualizar_ruta(nodo_ruta: Array, contenedor: Node):
+	#ocultamos todos los nodos de la esena
+	for linea in contenedor.get_children():
+		linea.visible = false
 	
-	
+	for i in range(nodo_ruta.size() - 1):
+		var tramo = nodo_ruta[i] + "_" + nodo_ruta[i+1]
+		if contenedor.has_node(tramo):
+			contenedor.get_node(tramo).visible = true
