@@ -89,7 +89,6 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		viajando = true
 		actualizar_nodo = datos.get("Nodo")
 		
-		
 		if indice_actual < coordenadas.size():
 			# Pasamos el nombre si es un nodo de Python, o "" si es cruce
 			# Aquí podrías agregar lógica para saber qué nombre pasar
@@ -107,8 +106,10 @@ func _controlador(evento: String, datos: Dictionary) -> void:
 		nodo_moto.establecer_objetivo(coordenadas[indice_actual], "")
 		
 	elif evento == "Entrega_Completada":
+		print("simulacion terminada")
 		estado = datos.get("Estado")
 		var otro_mensaje = {
+			"Tipo": "Actualizar_Estado",
 			"Estado": estado
 		}
 		datos_viaje.emit(otro_mensaje)

@@ -35,12 +35,14 @@ class DeliveryMoto:
         #verificamos donde estamos ahora
         try:
             indice = self.ruta_dijkstra.index(nodo_alcanzado)
+            print(f"indice dijkstra: {indice}")
         except ValueError:
             print("denrto de la ruta no existe ese nodo")
-            return
         
         #verificamos si llegamos al nodo final
+        print(f"nodo actual: {nodo_alcanzado}")
         if indice == len(self.ruta_dijkstra) - 1:
+            print("llegamos al final")
             await websocket.send(json.dumps({"Evento": "Entrega_Completada", "Estado": "Ruta_completada"}))
             return
 
@@ -117,7 +119,6 @@ async def manejo_server_godot(websocket, mapa):
 
             elif peticion.get("Comando") == "Llegue_Nodo":
                 print("yaju nos movimos seria justicia")
-                print(f"DEBUG: Recibido de Godot: {peticion}")
                 nodo_alcanzado = peticion["Tipo"]
 
                 if nodo_alcanzado == "Cruce":

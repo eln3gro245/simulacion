@@ -54,6 +54,9 @@ func _on_actualizar_interfaz(info: Dictionary):
 			velocidad.text = "Velocidad: " + str(info["Valor"]) + " km/h"
 		"Progreso":
 			progreso.value = info["Valor"] * 100
+		"Actualizar_Estado":
+			var estado_acomodado = str(info["Estado"])
+			estado.text = "Estado: " + estado_acomodado.replace("_", " ")
 
 func _on_zona_franca_label_pressed() -> void:
 	_on_oprimir_boton("Zona_Franca")
